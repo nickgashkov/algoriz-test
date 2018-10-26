@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <a href="{% url "algo-create" %}">Add new algo</a>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Algo Name</th>
+      <th>Average PnL</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for object in object_list %}
+      <tr>
+        <td>
+          <a href="{{ object.get_absolute_url }}">
+            {{ object.name }}
+          </a>
+        </td>
+        <td>{{ object.pnl_average|default_if_none:"" }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock body %}

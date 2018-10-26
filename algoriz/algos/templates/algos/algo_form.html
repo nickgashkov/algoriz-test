@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <form action="{% url "algo-create" %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+  </form>
+{% endblock body %}

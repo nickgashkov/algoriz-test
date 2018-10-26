@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <a href="{% url "algo-list" %}">Back</a>
+
+  <p><strong>Algo name:</strong> {{ object.name }}</p>
+  <p><strong>Signal:</strong> {{ object.signal }}</p>
+  <p><strong>Ticker:</strong> {{ object.ticker }}</p>
+  <p><strong>Trade:</strong> {{ object.trade }}</p>
+
+  <p><strong>PnL:</strong></p>
+  {{ object.pnl_plot|safe }}
+
+  <p><strong>Positions:</strong></p>
+  {{ object.positions_plot|safe }}
+
+{% endblock body %}
