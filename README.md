@@ -3,7 +3,7 @@
 ## Setup
 
 ```bash
-$ pip install -r requirements.pip
+$ pip install -r requirements.txt
 $ ./manage.py migrate
 ```
 
